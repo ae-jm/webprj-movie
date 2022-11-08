@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import path, include
 from recommand import views
+from .views import search
 
 urlpatterns = [
-    path('', views.index),
-    # path('', views.home)
-
+    path('', views.home),
+    path('ost_search/', views.ost_search),
 ]
