@@ -1,0 +1,101 @@
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> 말할 수 없는 영화 </title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'recommand/bootstrap/bootstrap.min.css' %}" media="screen"/>
+    <link rel="stylesheet" href="{% static 'recommand/css/nav.css' %}" />
+    <link rel="stylesheet" href="{% static 'recommand/css/repagecss.css' %}">
+</head>
+<body>
+
+{% include 'recommand/base.html' %}
+<section>
+<div class="table_responsive">
+    <table>
+        <thead>
+        <tr>
+            <th> 추천 순위 </th>
+            <th> 포스터 </th>
+            <th> 영화 정보 </th>
+            <th> 레이더 차트 </th>
+            <th> 평가 </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td> 01</td>
+            <td><img src="img/eatpraylove.jpg"></td>
+            <td>먹고 기도하고 사랑하라 <br>
+                영화 장르 <br>
+                영화 감독 <br>
+                <a href="#"> 영화 예고편 </a><br>
+            </td>
+            <td> 레이더 정보 </td>
+            <td>
+                            <span class="action_btn">
+                                <button type="button">좋아요</button>
+                                <button type="button">싫어요</button>
+                            </span>
+            </td>
+        </tr>
+        <tr>
+            <td> 02 </td>
+            <td><img src="img/turner.jpg"></td>
+            <td> 터너와 후치 </td>
+            <td> 레이더 정보 </td>
+            <td>
+                            <span class="action_btn">
+                                <button type="button">좋아요</button>
+                                <button type="button">싫어요</button>
+                            </span>
+            </td>
+        </tr>
+        <tr>
+            <td> 03 </td>
+            <td><img src="img/turner.jpg"></td>
+            <td> 터너와 후치 </td>
+            <td> 레이더 정보 </td>
+            <td>
+                            <span class="action_btn">
+                                <button type="button">좋아요</button>
+                                <button type="button">싫어요</button>
+                            </span>
+            </td>
+        </tr>
+        <tr>
+            <td> 04 </td>
+            <td><img src="img/turner.jpg"></td>
+            <td> 터너와 후치 </td>
+            <td> 레이더 정보 </td>
+            <td>
+                            <span class="action_btn">
+                                <button type="button">좋아요</button>
+                                <button type="button">싫어요</button>
+                            </span>
+            </td>
+        </tr>
+        <tr>
+            <td> 05 </td>
+            <td><img src="img/turner.jpg"></td>
+            <td> 터너와 후치 </td>
+            <td> 레이더 정보 </td>
+            <td>
+                            <span class="action_btn">
+                                <button type="button">좋아요</button>
+                                <button type="button">싫어요</button>
+                            </span>
+            </td>
+        </tr>
+
+
+        </tbody>
+    </table>
+</div>
+</section>
+</body>
+</html>
