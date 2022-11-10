@@ -1,32 +1,20 @@
-import pandas as pd
-from recommand.models import Movie
-# import os
-# import django
-# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "movie_prj.settings")
-# django.setup()
-
-
 import os
 import django
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'movie_prj.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "movie_prj.settings")
 os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
-
 django.setup()
 
+from recommand.models import Movie, Ost
+mo_id = [0, 1, 2]
 
-df = pd.read_csv('데이터완성본_id추가.csv', encoding='utf8')
+ost_all = []
 
-for i in range(len(df['movie_name'])):
-    Movie.objects.create(
-        movie_id=int(df['id'][i]),
-        movie_name=df['movie_name'][i],
-        year=int(df['year'][i]),
-        movie_dir=df['mvdir'][i],
-        movie_act=df['mvact'][i],
-        movie_ger=df['gerne'][i],
-        movie_text='',
-        movie_poster=''
-    )
-    print(df['movie_name'][i])
+for mov_id in mo_id:
+    forign = Ost.objects.filter(movie_id_id=mov_id)
+    ost_one = []
+    for ost_num in forign:
+        ost_one.append(ost_num.ost_name)
+    ost_all.append(ost_one)
 
+print(ost_all)

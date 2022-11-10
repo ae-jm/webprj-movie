@@ -28,3 +28,24 @@ class Ost(models.Model):
 
     def __str__(self):
         return f'{self.movie_id} : {self.ost_name}'
+
+    # class Movie_recommand(models.Model):
+    #     ost_id = models.ForeignKey('Ost', on_delete=models.CASCADE, db_column='ost_id')
+    #     user_id = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_id')
+    #     recodation = models.CharField(max_length=200)
+    #
+    # class User_rating(models.Model):
+    #     recommand_id = models.ForeignKey('Movie_recommand', on_delete=models.CASCADE, db_column='recommand_id')
+    #     review = models.PositiveSmallIntegerField(validators=[MaxValueValidator(2), ], null=True)
+    #     movie_id = models.ForeignKey(Movie, on_delete=models.CASCADE, db_column='movie_id')
+
+    def ost_search(movie_all):
+        mo_id = movie_all
+        ost_all = []
+        for mov_id in mo_id:
+            forign = Ost.objects.filter(movie_id_id=mov_id)
+            ost_one = []
+            for ost_num in forign:
+                ost_one.append(ost_num.ost_name)
+            ost_all.append(ost_one)
+        return (ost_all)

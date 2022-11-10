@@ -1,4 +1,3 @@
-# 이미 있는 라이브러리들이다...ㅎㅎㅎ
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
